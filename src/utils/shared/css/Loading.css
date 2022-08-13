@@ -1,0 +1,33 @@
+.loading{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:var(--fondo-loading);
+    justify-content:center !important;
+    align-items:center;
+}
+.loading-circle{
+    width:50px;
+    height:50px;
+    border-radius:100px;
+    background:transparent;
+    border:4px dashed var(--primary);
+    animation-name:loading;
+    animation-timing-function: ease;
+    animation-duration:4s;
+    animation-iteration-count:infinite;
+}
+.full{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+}
+@keyframes loading {
+    0%{transform: rotate(0deg);}
+    0%{transform: rotate(180deg);}
+    0%{transform: rotate(360deg);}
+}

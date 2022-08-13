@@ -1,0 +1,33 @@
+.back{
+    width:100vw;
+    height:100vw;
+    background-color:var(--sombra);
+    position:fixed;
+    top:0;
+    left:0;
+}
+.front{
+    position:absolute;
+    left:0;
+    right:0;
+    top:10vh;
+    margin:auto;
+    width:70vw;
+    height:80vh;
+    background:var(--white);
+    border-radius:3px;
+}
+.header-close{
+    padding:10px;
+    width:90%;
+    margin:auto ;
+    border-bottom:0.3px solid var(--primary);
+}
+.header-close h4{
+    color:var(--primary);
+    font-size:30px;
+    font-family: var(--title);
+}
+.close{
+    transform: scale(0);
+}
