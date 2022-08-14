@@ -6,10 +6,10 @@ export type arr={ key: string, title: string };
 
 const category = [{ key: 'Categoria-1', title: 'Hombre' }, { key: 'Categoria-2', title: 'Mujer' }, { key: 'Categoria-3', title: 'Pantalones' }];
 const marca=[{key:'marca-1',title:'Carmel'},{key:'marca-2',title:'Vigilia'}];
-const tallas=[{key:'talla1',title:'xl'},{key:'talla2',title:'l'},{key:'talla3',title:'m'},{key:'talla4',title:'s'}]
+const tallas=[{key:'TODO',title:'Todo'},{key:'talla1',title:'xl'},{key:'talla5',title:'xxl'},{key:'talla2',title:'l'},{key:'talla3',title:'m'},{key:'talla6',title:'sm'},{key:'talla4',title:'s'}]
 
 
-export const Search = ({getParams}:{getParams:Function}) => {
+export const Search = ({getParams,getTalla}:{getParams:Function,getTalla:Function}) => {
 
     const getData=(e:arr)=>{
         console.log(e)
@@ -18,12 +18,16 @@ export const Search = ({getParams}:{getParams:Function}) => {
         getParams(data);
     }
 
+    const _getTalla=(data:arr)=>{
+        getTalla(data);
+    }
+
     return (
         <div className='shadow search-content'>
             <div className="filter-1 grid tr4" >
                 <BlockFilter title='Categorias' value={getData} arr={category} />
                 <BlockFilter title='Marca' value={getData} arr={marca} />
-                <BlockFilter title='Talla' value={getData} arr={tallas} />
+                <BlockFilter title='Talla' value={_getTalla} arr={tallas} />
                 <BlockSearch getData={getText}/>
             </div>
         </div>
@@ -56,7 +60,7 @@ export const BlockFilter = ({ title, arr, value }: { children?: JSX.Element, tit
     return (
         <div className='block-content'>
             <h3>{title}</h3>
-            <div className={rotate!=0?'shadow flex-h':'flex-h'} style={{background:"var(--white)",padding:'5px', borderRadius:3}}>
+            <div className={rotate!=0?'shadow flex-h':'flex-h'} style={{background:"var(--white)",padding:'5px', borderRadius:3,zIndex: 200,position: 'relative'}}>
                 <div className="select-group" id="select-group" style={{ height: `${height}px`, width:'80%' }}>
                     <div className="select used">{selectdOpt.title}</div>
                     {

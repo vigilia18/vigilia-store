@@ -5,6 +5,7 @@
     position:fixed;
     top:0;
     left:0;
+    z-index:1200;
 }
 .front{
     position:absolute;
@@ -30,4 +31,14 @@
 }
 .close{
     transform: scale(0);
+}
+.img-content-modal{
+    width:100%;
+    height:100%;
+}
+.img-content-modal img{
+    display:block;
+    margin:auto;
+    height:90%;
+    max-width:90vw;
 }

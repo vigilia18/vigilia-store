@@ -2,8 +2,7 @@ import { useRef } from "react"
 import { Root } from "react-dom/client"
 import { IoMdCloseCircle } from "react-icons/io"
 import './Modal.css';
-
-export default function Modal({children,title,root}:{title:string,root:Root,children?:JSX.Element}):JSX.Element{
+export default function ModalImg({children,root}:{root:Root,children?:JSX.Element}):JSX.Element{
 
     const ref=useRef<any>(null);
 
@@ -20,14 +19,15 @@ export default function Modal({children,title,root}:{title:string,root:Root,chil
 
     return (
         <div className='back shadow' ref={ref}>
-            <div className='front'>
-                <div className="header-close flex-h">
-                    <h4>{title}</h4>
+            <div className='front' style={{background:'var(--text)',width:'100vw','height':'100vh',position:'fixed',top:'0px',left:'0px'}}>
+                <div className="header-close flex-h" style={{background:'transparent',border:'none',justifyContent:'end'}}>
                     <div className="btn-icon" onClick={close}>
                         <IoMdCloseCircle fill='white' fontSize='30px'/>
                     </div>
                 </div>
-                {children}
+                <div className='img-content-modal'>
+                    {children}
+                </div>
             </div>
         </div>
     )

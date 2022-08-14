@@ -1,4 +1,7 @@
 .navbar{
+    position:sticky !important;
+    top:0;
+    z-index: 210;
     padding:20px;
     min-height:100px;
     margin-bottom: 20px;
@@ -17,7 +20,7 @@
     background-color:var(--primary);
     padding:5px 10px;
 }
-.navbar ul li:hover a{
+.navbar ul li:hover a{ 
     color:var(--white);
 }
 .navbar a{
