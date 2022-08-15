@@ -1,6 +1,8 @@
 :root{
   --primary:rgba(255, 138, 21, 0.998);
+  --primary2:rgba(255, 108, 21, 0.998);
   --secondary:rgba(21,138,225,0.998);
+  --secondary2:rgba(21,108,225,0.998);
   --terceary:rgba(255, 21, 56, 0.998);
   --rose:rgba(255, 21, 156, 0.998);
   --success:rgba(21,255,138,0.998);
@@ -12,6 +14,44 @@
   --white-transparent:rgba(255,255,255,0.5);
   --sombra:rgba(0,0,0,0.3);
   --border:rgba(0,0,0,0.1);
+  --title:DynaPuff;
+  --paragraph:Poppins;
+}
+:root{
+  --primary:rgba(255, 32, 73, 0.998);
+  --primary2:rgba(255, 20, 82, 0.998);
+  --secondary:rgba(115, 50, 255, 0.998);
+  --secondary2:rgba(116, 21, 225, 0.998);
+  --terceary:rgba(255, 21, 56, 0.998);
+  --rose:rgba(255, 21, 156, 0.998);
+  --success:rgba(21,255,138,0.998);
+  --text:rgba(255, 255, 255, 0.8);
+  --text-white:rgba(18, 18, 18, 0.8);
+  --fondo:#141316;
+  --fondo-loading:rgba(17, 16, 16, 0.8);
+  --white:rgb(19, 19, 19);
+  --white-transparent:rgba(21, 21, 21, 0.5);
+  --sombra:rgba(255,255,255,0.3);
+  --border:rgba(255,255,255,0.1);
+  --title:DynaPuff;
+  --paragraph:Poppins;
+}
+:root{
+  --primary:rgba(255, 138, 21, 0.998);
+  --primary2:rgba(255, 108, 21, 0.998);
+  --secondary:rgba(21,138,225,0.998);
+  --secondary2:rgba(21,108,225,0.998);
+  --terceary:rgba(255, 21, 56, 0.998);
+  --rose:rgba(255, 21, 156, 0.998);
+  --success:rgba(21,255,138,0.998);
+  --text:rgba(255,255,255,0.8);
+  --text-white:rgba(10,10,40,0.8);
+  --fondo:rgb(20,20,20);
+  --fondo-loading:rgba(20,20,20,0.8);
+  --white:black;
+  --white-transparent:rgba(0,0,0,0.5);
+  --sombra:rgba(255,255,255,0.3);
+  --border:rgba(255,255,255,0.1);
   --title:DynaPuff;
   --paragraph:Poppins;
 }
@@ -203,6 +243,7 @@ body{
   box-shadow: 3px 3px 6px var(--sombra);
 }
 input{
+  background:transparent;
   padding:5px;
   font-size:18px;
   border:0.3px solid var(--border);
@@ -222,6 +263,11 @@ input{
   height:100%;
   object-fit: cover;
 }
+.img-content2{
+  position:relative;
+  margin:auto;
+  width:90%;
+}
 .img-content:hover .show-content{
   transform:scale(1);
 }
@@ -234,6 +280,14 @@ input{
   object-fit: contain;
   height:100vh;
 }
+.br4{
+  border-radius:4px !important;
+  overflow:hidden !important;
+}
+
+/*
+?Funciones y animaciones
+*/
 @keyframes asendente {
   0%{width:80%;}
   50%{width:40%;}

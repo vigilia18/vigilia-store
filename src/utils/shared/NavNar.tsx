@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import icon from "../../images/vigilia (2).jpg";
+import icon from "../../images/logo.svg";
 import './css/NavBar.css';
 
 export const NavBar=()=>{
@@ -9,7 +8,7 @@ export const NavBar=()=>{
     return (
         <header className='navbar flex-h' style={{position:'relative',backdropFilter:'blur(10px)',background:'var(--white-transparent)'}}>
             <div className='flex-h'>
-            <img className='icon' style={{marginRight:10}} src={icon} alt={'Vigilia'}/>
+            <img className='icon' style={{marginRight:10,transform:'rotate(90deg)'}} src={icon} alt={'Vigilia'}/>
             <h3>Vigilia Store</h3>
             </div>
 

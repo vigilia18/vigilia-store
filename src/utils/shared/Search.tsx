@@ -83,11 +83,17 @@ export const BlockSearch=({getData}:{getData:Function})=>{
 
     const [buscar, setBuscar] = useState('');
 
+    const enter=(e:any)=>{
+        if(e.key==='Enter'||e.keyCode===13){
+            getData(e.target.value);
+        }
+    }
+
     return (
         <div className='search-block '>
             <h3>Buscar</h3>
             <div className="grid tr10" style={{gridGap:0,maxHeight:'90px'}}>
-                <input type="text" value={buscar} onChange={(e)=>setBuscar(e.target.value)}/>
+                <input type="text" value={buscar} onKeyDown={enter} onChange={(e)=>setBuscar(e.target.value)}/>
                 <div className="icon-btn flex-v" style={{gridColumnStart:9,gridColumnEnd:11,width:'100%',height:'40px',margin:0,borderRadius:0,padding:'5px'}} onClick={(e) => getData(buscar)}><AiOutlineSearch size="100" fill="white" /></div>
             </div>
 
