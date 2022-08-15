@@ -17,6 +17,8 @@
   --title:DynaPuff;
   --paragraph:Poppins;
 }
+/*?dark mode 2*/
+/*
 :root{
   --primary:rgba(255, 32, 73, 0.998);
   --primary2:rgba(255, 20, 82, 0.998);
@@ -36,7 +38,9 @@
   --title:DynaPuff;
   --paragraph:Poppins;
 }
-:root{
+*/
+/* ? dark mode 1*/
+/* :root{
   --primary:rgba(255, 138, 21, 0.998);
   --primary2:rgba(255, 108, 21, 0.998);
   --secondary:rgba(21,138,225,0.998);
@@ -48,13 +52,13 @@
   --text-white:rgba(10,10,40,0.8);
   --fondo:rgb(20,20,20);
   --fondo-loading:rgba(20,20,20,0.8);
-  --white:black;
-  --white-transparent:rgba(0,0,0,0.5);
+  --white:rgba(20,20,20,1);
+  --white-transparent:rgba(10,10,10,0.5);
   --sombra:rgba(255,255,255,0.3);
   --border:rgba(255,255,255,0.1);
   --title:DynaPuff;
   --paragraph:Poppins;
-}
+} */
 *{
   margin:0;
   padding:0;
@@ -67,6 +71,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+textarea{
+  background:transparent;
 }
 .center-grid{
   background-color: var(--white-transparent);

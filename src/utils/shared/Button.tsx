@@ -1,10 +1,13 @@
+import { ButtonCustom } from '../../styles/style/ButtomCustom.style';
 import './css/Button.css';
-export const Button=({text,back='primary',click,hover='secondary',children}:{children?:JSX.Element,text:string,back?:string,hover?:string,click:Function})=>{
+import { initValuesStyles as st } from '../../styles/style/root.style';
+
+export const Button=({text,back='primary',click,hover='secondary',children}:{children?:JSX.Element,text:string,back?:keyof typeof st,hover?:keyof typeof st,click:Function})=>{
     return (
-        <button className='btn-custom' style={{background:`var(--${back})`}} onClick={(e)=>click(e)}>
-            <div className='circle flex-v' style={{background:`var(--${hover})`}}>
+        <ButtonCustom style={{background:`${st[back]}`}} onClick={(e)=>click(e)}>
+            <div className='circle flex-v' style={{background:`${st[hover]}`}}>
             </div>
                 <div className='flex-h'>{children}<p>{' '+text}</p></div>
-        </button>
+        </ButtonCustom>
     )
 }

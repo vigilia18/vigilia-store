@@ -6,6 +6,7 @@ import { Button } from "../utils/shared/Button";
 import { Loading } from '../utils/shared/Loading';
 import './css/Card.css';
 import { InfoProduct } from './InfoProduct';
+import { CardBodyStyle, CardheaderStyle, CardStyle, PriceStyle } from './styles/Card.style';
 
 export const CardProduct=({product,coin='$'}:{coin?:string,product:IProduct})=>{
 
@@ -21,16 +22,16 @@ export const CardProduct=({product,coin='$'}:{coin?:string,product:IProduct})=>{
     }
 
     return (
-        <div className="card">
-            <div className="card-header" style={{position:'relative'}} onClick={()=>handleClick()}>
+        <CardStyle>
+            <CardheaderStyle style={{position:'relative'}} onClick={()=>handleClick()}>
                 <img src={product.img} onLoad={()=>setload(false)} />
                 <Loading load={load}/>
-            </div>
-            <div className="card-body">
+            </CardheaderStyle>
+            <CardBodyStyle>
                 <h4>{product.name}</h4>
                 <p>{product.descripcion}</p>
-                <strong className='price'>{coin}{product.price}</strong>
-            </div>
+                <PriceStyle className='price'>{coin}{product.price}</PriceStyle>
+            </CardBodyStyle>
             <div className='flex-h' style={{padding:'10px'}}>
                 <Button text="Añadir" back='secondary' hover='success' click={anadir}>
                     <AiOutlinePlus fontSize='20px'/>
@@ -39,6 +40,6 @@ export const CardProduct=({product,coin='$'}:{coin?:string,product:IProduct})=>{
                     <AiOutlineShop/>
                 </Button>
             </div>
-        </div>
+        </CardStyle>
     )
 }

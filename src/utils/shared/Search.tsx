@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { AiFillDownCircle, AiOutlineSearch } from "react-icons/ai";
+import { BlockContent, IconBtn, SearchBlock, SearchContent, SelectGroup, SelectUsed } from '../../styles/style/Search.style';
+import { initValuesStyles as st } from '../../styles/style/root.style';
 import './css/Search.css';
 export type arrOptions = { key: string, title: string }[]
 export type arr={ key: string, title: string };
@@ -23,14 +25,14 @@ export const Search = ({getParams,getTalla}:{getParams:Function,getTalla:Functio
     }
 
     return (
-        <div className='shadow search-content'>
-            <div className="filter-1 grid tr4" >
+        <SearchContent className='shadow'>
+            <div className="grid tr4" >
                 <BlockFilter title='Categorias' value={getData} arr={category} />
                 <BlockFilter title='Marca' value={getData} arr={marca} />
                 <BlockFilter title='Talla' value={_getTalla} arr={tallas} />
                 <BlockSearch getData={getText}/>
             </div>
-        </div>
+        </SearchContent>
     );
 }
 
@@ -58,11 +60,11 @@ export const BlockFilter = ({ title, arr, value }: { children?: JSX.Element, tit
     }
 
     return (
-        <div className='block-content'>
+        <BlockContent>
             <h3>{title}</h3>
-            <div className={rotate!=0?'shadow flex-h':'flex-h'} style={{background:"var(--white)",padding:'5px', borderRadius:3,zIndex: 200,position: 'relative'}}>
-                <div className="select-group" id="select-group" style={{ height: `${height}px`, width:'80%' }}>
-                    <div className="select used">{selectdOpt.title}</div>
+            <div className={rotate!=0?'shadow flex-h':'flex-h'} style={{background:st.white,padding:'5px', borderRadius:3,zIndex: 200,position: 'relative'}}>
+                <SelectGroup id="select-group" style={{ height: `${height}px`, width:'80%' }}>
+                    <SelectUsed>{selectdOpt.title}</SelectUsed>
                     {
                         arr.map((e) => (
                             <div
@@ -72,10 +74,10 @@ export const BlockFilter = ({ title, arr, value }: { children?: JSX.Element, tit
                             >{e.title}</div>
                         ))
                     }
-                </div>
-                <div className="icon-btn flex-v" onClick={() => showOption()}><AiFillDownCircle transform={`rotate(${rotate})`} size="100" fill="white" /></div>
+                </SelectGroup>
+                <IconBtn className="flex-v" onClick={() => showOption()}><AiFillDownCircle transform={`rotate(${rotate})`} size="100" fill="white" /></IconBtn>
             </div>
-        </div>
+        </BlockContent>
     )
 }
 
@@ -90,13 +92,13 @@ export const BlockSearch=({getData}:{getData:Function})=>{
     }
 
     return (
-        <div className='search-block '>
+        <SearchBlock>
             <h3>Buscar</h3>
             <div className="grid tr10" style={{gridGap:0,maxHeight:'90px'}}>
                 <input type="text" value={buscar} onKeyDown={enter} onChange={(e)=>setBuscar(e.target.value)}/>
                 <div className="icon-btn flex-v" style={{gridColumnStart:9,gridColumnEnd:11,width:'100%',height:'40px',margin:0,borderRadius:0,padding:'5px'}} onClick={(e) => getData(buscar)}><AiOutlineSearch size="100" fill="white" /></div>
             </div>
 
-        </div>
+        </SearchBlock>
     )
 }

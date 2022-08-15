@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavBar } from "../utils/shared/NavNar"
-import logo from '../images/logo.svg';
+import logo from '../images/Plugin icon - 1 1.png';
 import data from "../data/products.json";
 import './css/HomePage.css';
 import { Button } from "../utils/shared/Button";
@@ -9,6 +9,9 @@ import { CardProduct } from "../components/Card";
 import { IProduct } from "../interfaces/product";
 import { Loading } from "../utils/shared/Loading";
 import { SlidePage } from "../components/HomePage/Slide";
+import {AboutUs} from "../components/HomePage/AboutUs";
+import {Footer} from "../utils/shared/Footer";
+import { CardContent, MainFondo, Subtitle, TextContent } from "../styles/style/root.style";
 export const HomePage = () => {
 
     const [product, setProduct] = useState<IProduct[]>(data.filter(e=>e.id<13));
@@ -47,34 +50,36 @@ export const HomePage = () => {
     return (
         <>
             <NavBar />
-            <div className='main-fondo'>
+            <MainFondo>
                 <div className='grid tr2'>
                     <div style={{position:'relative'}}>
                         <Loading load={_loading}/>
                         <img src={logo} onLoad={loading} style={{transform:'rotate(30deg)'}}/>
                     </div>
-                    <div className="text-content flex-v">
+                    <TextContent className="flex-v">
                         <h1>Vigilia Store web</h1>
                         <p>La plataforma en donde puedes tener tu tienda online en poco pasos</p>
                         <Button text='Ver mas' click={click}/>
-                    </div>
+                    </TextContent>
                 </div>
-            </div>
+            </MainFondo>
             <Search getParams={getParams} getTalla={getTalla}/>
             <div>
                 <div style={{position:'relative', minHeight:'50px'}}>
-                    <h3 className="subtitle" style={{position:'relative',zIndex:3}}>Nuestros Productos</h3>
+                    <Subtitle style={{position:'relative',zIndex:3}}>Nuestros Productos</Subtitle>
                     <div className='linea'></div>
                 </div>
-                <div className={`grid tr4 shadow card-content`} style={{alignItems:'center',justifyItems:'center',padding:10}}>
+                <CardContent className={`grid tr4 shadow`} style={{alignItems:'center',justifyItems:'center',padding:10}}>
                     {
                         product.map((e,i)=>(
                             <CardProduct product={e} key={i+Date.now()}/>
                         ))
                     }
-                </div>
+                </CardContent>
             </div>
             <SlidePage/>
+            <AboutUs/>
+            <Footer/>
         </>
     )
 }

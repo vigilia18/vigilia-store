@@ -7,7 +7,7 @@
     background:var(--primary);
     /* border-top:10px solid var(--primary2);
     border-left:10px solid var(--primary2); */
-    border:10px solid var(--primary2);
+    /* border:10px solid var(--primary2); */
     cursor:pointer;
 }
 .promo-text p{
@@ -55,8 +55,4 @@
 .content-slide-imgs{
     margin:auto;
     display:flex;
-}
-.btn-scrols{
-    width:40%;
-    margin:auto;
 }
